@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif; /* Default font for the website */
+    line-height: 1.6; /* Increase line height for better readability */
+    padding: 0 10px; /* Padding to avoid elements sticking to the edges */
+}
+
 /* Header */
 header {
     background-color: #333;
@@ -18,27 +25,65 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
+/* Logo */
+.logo img {
+    max-width: 100px; /* Small logo size for mobile */
+    width: auto;
+    height: auto;
+}
+
+/* Navigation */
 ul {
     list-style: none;
     display: flex;
+    padding: 0;
     margin: 0;
 }
 
 ul li {
-    margin: 0 15px;
+    margin: 0 20px; /* Space between each nav item */
 }
 
 ul li a {
     text-decoration: none;
     color: white;
+    font-weight: bold;
+    text-transform: uppercase; /* For a more professional look */
 }
 
-/* Logo styling */
-.logo img {
-    max-width: 100px; /* Adjust the size of the logo */
+/* Product Container Styling */
+.products-container {
+    display: grid;
+    gap: 20px; /* Space between product items */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    margin: 30px 0;
+}
+
+/* Product Item Styling */
+.product-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.product-item img {
+    width: 100%; /* Make images responsive */
     height: auto;
+    max-height: 200px; /* Limit the height of the product images */
+    object-fit: cover; /* Ensure image covers container without distortion */
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 /* Mobile-first styles */
@@ -46,6 +91,7 @@ ul li a {
     nav {
         flex-direction: column;
         align-items: center;
+        text-align: center; /* Center the nav items for small screens */
     }
 
     .left-nav, .right-nav {
@@ -55,19 +101,32 @@ ul li a {
     }
 
     .left-nav li, .right-nav li {
-        margin: 10px 0;
+        margin: 10px 0; /* More space between items on mobile */
     }
 
-    /* Logo in the center for mobile */
+    /* Adjust logo size for mobile */
     .logo img {
-        max-width: 80px; /* Adjust logo size for mobile */
+        max-width: 80px; /* Further reduce the logo size on small screens */
+    }
+
+    ul li {
+        margin: 5px 0; /* Smaller spacing for mobile navigation */
+    }
+
+    .products-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+
+    .product-item h3 {
+        font-size: 1em; /* Smaller title size on mobile */
     }
 }
 
 /* Tablet and above */
 @media (min-width: 768px) {
     nav {
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center; /* Center-align logo and nav items on larger screens */
     }
 
     .left-nav, .right-nav {
@@ -75,20 +134,29 @@ ul li a {
     }
 
     .left-nav li, .right-nav li {
-        margin: 0 20px;
+        margin: 0 20px; /* Space between items */
+    }
+    .products-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
     }
 }
 
-.whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
+/* Paragraphs and Content */
+p {
+    margin-bottom: 15px; /* Add space between paragraphs */
+    line-height: 1.8; /* Increase space between lines of text */
 }
 
+/* Additional styling for content sections */
+section {
+    margin: 20px 0; /* Add space around sections */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 30px;
+}
